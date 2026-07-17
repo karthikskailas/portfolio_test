@@ -101,6 +101,155 @@
             </div>
         </section>
 
+        <!-- About Me Section -->
+        <section class="about" id="about" aria-label="About Me">
+            <!-- Background Decorative Glows -->
+            <div class="about-bg" aria-hidden="true">
+                <div class="about-glow"></div>
+            </div>
+
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title">ABOUT ME</h2>
+                    <p class="section-subtitle">Get to know me better.</p>
+                </div>
+
+                <!-- Two-column grid -->
+                <div class="about-grid">
+                    
+                    <!-- Left Column: Profile Photo & Frame -->
+                    <div class="about-left reveal-on-scroll">
+                        <div class="image-wrapper">
+                            <!-- SVG Placeholder for premium avatar / profile image -->
+                            <div class="profile-image-placeholder">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="avatar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="var(--color-primary)" />
+                                            <stop offset="100%" stop-color="var(--color-secondary)" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#avatar-grad)" opacity="0.15" />
+                                    <!-- Stylized Avatar Outline -->
+                                    <circle cx="100" cy="80" r="35" fill="url(#avatar-grad)" />
+                                    <path d="M50 160 C50 120, 150 120, 150 160" fill="url(#avatar-grad)" />
+                                    <circle cx="100" cy="100" r="90" stroke="url(#avatar-grad)" stroke-width="2" fill="none" opacity="0.4" />
+                                </svg>
+                            </div>
+                            <div class="image-decoration-frame"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Biography, Highlights, Personal Details, Stats -->
+                    <div class="about-right">
+                        
+                        <!-- Heading & Biography -->
+                        <div class="about-bio-block reveal-on-scroll">
+                            <h3 class="about-heading">Who am I?</h3>
+                            <div class="about-bio-text">
+                                <p>I am a passionate Full Stack Developer and technology enthusiast dedicated to building meaningful digital products that solve real-world problems. With a strong foundation in modern web architectures, I thrive on crafting clean, high-performance code and creating intuitive, user-centric experiences.</p>
+                                <p>My journey in tech is driven by an active open-source mindset and a commitment to community leadership. Having served as the TinkerHub Campus Lead and the IEEE SB SBCE Webmaster, I enjoy mentoring emerging developers, organizing workshops, and collaborating on community-driven open-source projects.</p>
+                                <p>I believe in continuous learning as the cornerstone of growth in this fast-paced industry. I constantly explore new methodologies, languages, and optimization strategies to ensure the solutions I build are not only scalable and robust but also accessible to everyone.</p>
+                            </div>
+                        </div>
+
+                        <!-- Highlights / Information Cards -->
+                        <div class="about-highlights-grid">
+                            
+                            <!-- Card 1 -->
+                            <div class="highlight-card reveal-on-scroll delay-1">
+                                <div class="highlight-icon">🚀</div>
+                                <h4 class="highlight-title">Full Stack Developer</h4>
+                                <p class="highlight-desc">Engineering robust frontend interfaces and scalable backend solutions.</p>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="highlight-card reveal-on-scroll delay-2">
+                                <div class="highlight-icon">🌐</div>
+                                <h4 class="highlight-title">Open Source Enthusiast</h4>
+                                <p class="highlight-desc">Contributing to shared repositories and building accessible tooling for the community.</p>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="highlight-card reveal-on-scroll delay-3">
+                                <div class="highlight-icon">👥</div>
+                                <h4 class="highlight-title">Community Leader</h4>
+                                <p class="highlight-desc">Fostering growth, organizing tech events, and driving developer collaborations.</p>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="highlight-card reveal-on-scroll delay-4">
+                                <div class="highlight-icon">💡</div>
+                                <h4 class="highlight-title">Problem Solver</h4>
+                                <p class="highlight-desc">Resolving complex architectural puzzles with clean, performant, and maintainable code.</p>
+                            </div>
+
+                        </div>
+
+                        <!-- Personal Details Grid -->
+                        <div class="about-details-block reveal-on-scroll">
+                            <h4 class="details-section-title">Personal Details</h4>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Name</span>
+                                    <span class="detail-value">Karthik S Kailas</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Location</span>
+                                    <span class="detail-value">Kerala, India</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Email</span>
+                                    <span class="detail-value">karthik@example.com</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Education</span>
+                                    <span class="detail-value">B.Tech in Computer Science</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Current Focus</span>
+                                    <span class="detail-value">Scalable Architectures & DevOps</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Languages</span>
+                                    <span class="detail-value">English, Malayalam, Hindi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Statistics Counter Blocks -->
+                        <div class="about-stats-grid">
+                            
+                            <div class="stat-card reveal-on-scroll delay-1">
+                                <div class="stat-number" data-target="45" data-suffix="+">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+
+                            <div class="stat-card reveal-on-scroll delay-2">
+                                <div class="stat-number" data-target="5" data-suffix="+">0</div>
+                                <div class="stat-label">Years Learning</div>
+                            </div>
+
+                            <div class="stat-card reveal-on-scroll delay-3">
+                                <div class="stat-number" data-target="3" data-suffix="">0</div>
+                                <div class="stat-label">Communities Led</div>
+                            </div>
+
+                            <div class="stat-card reveal-on-scroll delay-4">
+                                <div class="stat-number" data-target="18" data-suffix="+">0</div>
+                                <div class="stat-label">Technologies Used</div>
+                            </div>
+
+                        </div>
+
+                    </div> <!-- End about-right -->
+
+                </div> <!-- End about-grid -->
+
+            </div> <!-- End container -->
+        </section>
+
     </main>
 
     <!-- Global Footer -->

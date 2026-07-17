@@ -43,6 +43,64 @@ export function runTypewriter(element, text, typingSpeed = 30, callback = null) 
 }
 
 /**
+ * Animates numerical stat counters up to their target values.
+ * @param {HTMLElement} element - The DOM element displaying the number.
+ */
+export function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'), 10);
+    const suffix = element.getAttribute('data-suffix') || '';
+    const duration = 2000; // Animation length in milliseconds
+    let startTime = null;
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const currentValue = Math.floor(progress * target);
+        
+        element.textContent = currentValue + suffix;
+        
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            element.textContent = target + suffix;
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
+/**
+ * Configures the Intersection Observer to trigger reveal transitions on scroll.
+ */
+export function initScrollReveal() {
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                
+                // If the element is a stats counter, trigger the counting animation
+                if (entry.target.classList.contains('stat-number')) {
+                    animateCounter(entry.target);
+                }
+                
+                observer.unobserve(entry.target); // Execute animation only once
+            }
+        });
+    }, revealOptions);
+
+    // Observe reveal components and statistics containers
+    const revealElements = document.querySelectorAll('.reveal-on-scroll, .stat-number');
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+}
+
+/**
  * Initializes the animations module.
  */
 export function initAnimations() {
@@ -55,4 +113,8 @@ export function initAnimations() {
             runTypewriter(introElement, introductionText, 25);
         }, 1200);
     }
+
+    // Initialize Scroll Reveal & Counter systems
+    initScrollReveal();
 }
+

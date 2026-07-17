@@ -1,6 +1,6 @@
-# Professional Portfolio Website - Phase 2 (Hero Section Completed)
+# Professional Portfolio Website - Phase 3 (About Me Section Completed)
 
-This repository represents the initial foundation and the complete Phase 2 implementation of a clean, responsive, and modern portfolio website. It establishes a dark, futuristic developer-focused Hero Section using native web technologies (HTML5, CSS3, and ES6 Modules) without build tools or third-party libraries.
+This repository represents the initial foundation and the complete Phase 3 implementation of a clean, responsive, and modern portfolio website. It establishes a dark, futuristic developer-focused Hero Section and a comprehensive, premium About Me Section using native web technologies (HTML5, CSS3, and ES6 Modules) without build tools or third-party libraries.
 
 ---
 
@@ -11,6 +11,29 @@ This repository represents the initial foundation and the complete Phase 2 imple
 - **Completed Phases:**
   - **Phase 1:** Directory structure, configuration, boilerplate code, base stylesheets, and empty JS initializers.
   - **Phase 2:** Premium, centered Hero Section introducing the developer with modern layouts, typography scaling, ambient animations, and typing effects.
+  - **Phase 3:** Premium, responsive two-column "About Me" section containing a biography, highlighting info-cards, personal details grid, and animated statistics counters triggered once via Intersection Observer.
+
+---
+
+## Completed: Phase 3 About Me Section
+
+The About Me section inside [index.html](index.html) introduces the developer professionally using:
+- **Responsive Two-Column Layout:** A mobile-first layout that stacks vertically on mobile/tablet devices and displays side-by-side on laptops/desktops.
+  - **Left Column:** A decorative glassmorphic profile frame showcasing a vector avatar outline.
+  - **Right Column:** Contains the bio heading ("Who am I?"), biography paragraphs, highlights grid, personal details table, and statistics cards.
+- **Biography:** A 3-paragraph professional biography communicating passion for technology, full stack engineering, open-source involvement, community leadership, and continuous learning.
+- **Highlights Cards:** Subtle glassmorphic information cards for:
+  - 🚀 *Full Stack Developer*
+  - 🌐 *Open Source Enthusiast*
+  - 👥 *Community Leader*
+  - 💡 *Problem Solver*
+- **Personal Details Grid:** Responsive grid showcasing key fields: Name, Location, Email, Education, Current Focus, and Languages.
+- **Statistics Counters:** Animated counters for:
+  - *Projects Completed* (`45+`)
+  - *Years Learning* (`5+`)
+  - *Communities Led* (`3`)
+  - *Technologies Used* (`18+`)
+- **Scroll Reveal Architecture:** Leverages the native Javascript `Intersection Observer` API in [animations.js](js/animations.js) to trigger staggered, one-time reveal transitions (`.reveal-active`) and stats count-ups only when they scroll into view.
 
 ---
 
