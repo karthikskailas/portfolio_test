@@ -13,7 +13,28 @@
    2. Tablet Breakpoint (min-width: 768px)
    -------------------------------------------------------------------------- */
 @media screen and (min-width: 768px) {
-    /* Tablet specific overrides go here */
+    /* Scaling typography for Tablet screens */
+    .hero .hero-greeting {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero .hero-name {
+        font-size: 3.5rem;
+    }
+    
+    .hero .hero-tagline {
+        font-size: var(--font-size-sm);
+        letter-spacing: 0.05em;
+    }
+    
+    .hero .hero-tagline .bullet {
+        margin: 0 var(--spacing-sm);
+    }
+    
+    .hero .hero-intro {
+        font-size: var(--font-size-base);
+    }
 }
 
 
@@ -21,7 +42,14 @@
    3. Laptop Breakpoint (min-width: 1024px)
    -------------------------------------------------------------------------- */
 @media screen and (min-width: 1024px) {
-    /* Laptop specific overrides go here */
+    /* Scaling typography for Laptop screens */
+    .hero .hero-name {
+        font-size: 4rem;
+    }
+    
+    .hero .hero-intro {
+        font-size: var(--font-size-md);
+    }
 }
 
 
@@ -29,5 +57,8 @@
    4. Desktop Breakpoint (min-width: 1200px)
    -------------------------------------------------------------------------- */
 @media screen and (min-width: 1200px) {
-    /* Desktop specific overrides go here */
+    /* Scaling typography for Large Desktop screens */
+    .hero .hero-name {
+        font-size: var(--font-size-4xl);
+    }
 }

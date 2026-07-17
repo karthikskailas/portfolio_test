@@ -33,6 +33,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 /* 4. Default Typography */
@@ -76,4 +77,304 @@ video {
 ::selection {
     background-color: var(--color-primary);
     color: var(--color-white);
+}
+
+
+/* ==========================================================================
+   HERO SECTION STYLING (PHASE 2)
+   ========================================================================== */
+
+main {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-background);
+    padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+/* Ambient Background glows and grid overlay */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.glow-circle {
+    position: absolute;
+    border-radius: var(--radius-full);
+    filter: blur(80px);
+    opacity: 0.6;
+    mix-blend-mode: screen;
+}
+
+.glow-circle-1 {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, var(--color-glow-1) 0%, transparent 70%);
+    top: 15%;
+    left: 15%;
+    animation: floatCircle1 20s infinite alternate ease-in-out;
+}
+
+.glow-circle-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--color-glow-2) 0%, transparent 70%);
+    bottom: 10%;
+    right: 15%;
+    animation: floatCircle2 25s infinite alternate ease-in-out;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: center center;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+}
+
+/* Centered content body */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* 1. Greeting */
+.hero-greeting {
+    font-family: var(--font-monospace);
+    font-size: var(--font-size-xs);
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* 2. Large Name with radial glow backdrop */
+.hero-name {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.hero-name::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, var(--color-glow-name) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(25px);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.glow-text {
+    background: linear-gradient(135deg, var(--color-white) 40%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* 3. Professional Tagline */
+.hero-tagline {
+    font-size: var(--font-size-xs);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+}
+
+.hero-tagline .bullet {
+    color: var(--color-secondary);
+    margin: 0 var(--spacing-xs);
+    font-weight: var(--font-weight-bold);
+}
+
+/* 4. Short Introduction */
+.hero-intro {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: var(--spacing-2xl);
+    line-height: 1.7;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-light);
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background-color: var(--color-secondary);
+    margin-left: 4px;
+    animation: blinkCursor 0.8s infinite;
+    vertical-align: middle;
+}
+
+.typing-cursor.finished {
+    display: none;
+}
+
+/* 5. CTA Action Buttons */
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    background-image: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, transparent 100%);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-text);
+    transform: translateY(-3px);
+}
+
+/* 6. Social Links */
+.hero-socials {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.social-link {
+    color: var(--color-text-muted);
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.social-link:hover {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    background-color: rgba(6, 182, 212, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(6, 182, 212, 0.15);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* 7. Scroll Down Indicator */
+.hero-scroll {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.mouse-icon {
+    width: 26px;
+    height: 42px;
+    border: 2px solid var(--color-border);
+    border-radius: 100px;
+    position: relative;
+    transition: border-color var(--transition-normal);
+}
+
+.mouse-icon:hover {
+    border-color: var(--color-secondary);
+}
+
+.mouse-icon .wheel {
+    width: 4px;
+    height: 8px;
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-full);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite ease-in-out;
 }

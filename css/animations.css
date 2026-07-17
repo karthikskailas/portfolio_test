@@ -14,10 +14,27 @@
 }
 
 .anim-fade {
-    /* To be applied to elements in future phases */
     animation-name: fadeIn;
     animation-duration: var(--transition-normal);
     animation-fill-mode: both;
+}
+
+/* Staggered Content Reveal Animation */
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anim-reveal {
+    opacity: 0;
+    animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 0.9) forwards;
+    animation-delay: var(--anim-delay, 0s);
 }
 
 /* 2. Slide Animations */
@@ -33,7 +50,6 @@
 }
 
 .anim-slide {
-    /* To be applied to elements in future phases */
     animation-name: slideInUp;
     animation-duration: var(--transition-normal);
     animation-fill-mode: both;
@@ -52,7 +68,6 @@
 }
 
 .anim-scale {
-    /* To be applied to elements in future phases */
     animation-name: scaleUp;
     animation-duration: var(--transition-normal);
     animation-fill-mode: both;
@@ -69,9 +84,62 @@
 }
 
 .anim-rotate {
-    /* To be applied to elements in future phases */
     animation-name: rotateClockwise;
     animation-duration: var(--transition-slow);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+/* 5. Floating Background Elements */
+@keyframes floatCircle1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(40px, -60px) scale(1.1);
+    }
+    100% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+@keyframes floatCircle2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-50px, 40px) scale(0.9);
+    }
+    100% {
+        transform: translate(20px, -30px) scale(1.05);
+    }
+}
+
+/* 6. Scroll Indicator Mouse Wheel Animation */
+@keyframes scrollWheel {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+        transform: translate(-50%, 12px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 12px);
+    }
+}
+
+/* 7. Blinking Cursor (for Typing effect) */
+@keyframes blinkCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-secondary);
+    }
 }
